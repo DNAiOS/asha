@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you build on the Asha API or cite its benchmarks, cite the preprint."
+title: "Asha API: developer quickstart, examples and specifications"
+type: software
+authors:
+  - name: DNAi Systems
+repository-code: "https://github.com/DNAiOS/asha"
+url: "https://askasha.org/developers/"
+license: Apache-2.0
+keywords:
+  - medical-ai
+  - healthcare
+  - openai-compatible
+  - a2a
+  - mcp
+  - retrieval-augmented-generation
+preferred-citation:
+  type: article
+  title: "An auditable, retrieval-grounded agent architecture improves medical accuracy and conversational safety in language models"
+  authors:
+    - family-names: Singh
+      given-names: Deepan
+    - family-names: Anand
+      given-names: Paridhi
+  doi: "10.21203/rs.3.rs-10206806/v1"
+  publisher:
+    name: Research Square
+  year: 2026

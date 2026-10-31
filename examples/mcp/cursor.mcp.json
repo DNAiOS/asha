@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "asha": { "command": "asha", "args": ["mcp"] }
+  }
+}

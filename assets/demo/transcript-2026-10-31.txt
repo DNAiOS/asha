@@ -1,0 +1,20 @@
+**Labetalol, nifedipine (extended-release), and methyldopa are the standard first-line choices in pregnancy. ACE inhibitors and ARBs are contraindicated.** 
+
+Reviews place methyldopa, beta-blockers (labetalol most often) and calcium channel blockers as first- or second-line, with ACE inhibitors, ARBs and most diuretics avoided because the risk outweighs the benefit . For acute severe hypertension, IV labetalol or oral nifedipine are reasonable, and hydralazine is also used . The Canadian consensus treats systolic above 169 or diastolic above 109 mm Hg as an emergency needing prompt drug treatment . Treatment thresholds elsewhere are 140/90 mm Hg in defined higher-risk groups . Mild-to-moderate hypertension may not clearly reduce maternal or fetal risk with treatment . Thiazides are a second-line option, and data on ARBs are sparse, with effects assumed similar to ACE inhibitors .
+
+**Any patient on an ACE inhibitor or ARB who becomes pregnant or plans to should be switched under supervision, not stopped abruptly without a replacement plan.**
+
+Evidence caveats: two retrieved papers are retracted and were not used . A preprint reports differing placental vascular effects between agents, which is preliminary only . Choice and dose depend on gestational age, severity, and comorbidities, which remain your call.
+
+## My Sources
+1. [Directly covers antihypertensive drugs in pregnancy: Antihypertensive drugs in pregnancy.](https://pubmed.ncbi.nlm.nih.gov/21266266/)
+2. [Guideline on hypertensive disorders of pregnancy management: Antihypertensives in Pregnancy.](https://pubmed.ncbi.nlm.nih.gov/36822710/)
+3. [Systematic review; details unclear, likely pregnancy hypertension treatment: Pharmacotherapeutic options for the treatment of hypertension in pregnancy.](https://pubmed.ncbi.nlm.nih.gov/39225514/)
+4. [Systematic review identified only by ID; presumed relevant: Report of the Canadian Hypertension Society Consensus Conference: 3....](https://pubmed.ncbi.nlm.nih.gov/9361646/)
+5. [Study identified only by ID; topic unclear, presumed relevant: The effect of antihypertensive drugs on the fetus.](https://pubmed.ncbi.nlm.nih.gov/12082488/)
+6. [Study identified only by ID; topic unclear, presumed relevant: The safety of antihypertensives for treatment of pregnancy hypertension.](https://pubmed.ncbi.nlm.nih.gov/14680459/)
+7. [Covers antihypertensive use in pregnancy and lactation: Use of antihypertensive drugs during pregnancy and lactation.](https://pubmed.ncbi.nlm.nih.gov/18466419/)
+
+
+[27 sources, depth base, task 839f0bb7-35b6-4d57-9603-9dfe0a7b2d8d]
+  - pubmed_abstracts

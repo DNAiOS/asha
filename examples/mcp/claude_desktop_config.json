@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "asha": { "command": "/Users/you/.local/bin/asha", "args": ["mcp"] }
+  }
+}

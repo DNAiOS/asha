@@ -57,10 +57,10 @@ Paired design: the same answer-writing model alone and inside Asha, same items, 
 
 | Benchmark | n | Grader | Model alone | Inside Asha | Difference (points) |
 |---|---:|---|---|---|---|
-| HealthBench Hard | 1,000 | gpt-4.1 (official) | GPT-6 Astra 29.4 | Apex-J 42.0 | +12.6 [10.7, 14.4] |
-| HealthBench, all conversations | 5,000 | gpt-4.1 (official) | GPT-6 Astra 52.7 | Apex-J 60.7 | +8.0 [7.3, 8.7] |
+| HealthBench Hard | 1,000 | gpt-4.1 (official) | GPT-6 Astra 32.4 | Apex-J 48.7 | +16.3 [14.6, 18.1] |
+| HealthBench, all conversations | 5,000 | gpt-4.1 (official) | GPT-6 Astra 55.6 | Apex-J 65.5 | +9.8 [9.2, 10.5] |
 | HealthBench, Vishwanath et al. 500 | 500 | the study's three-judge panel | GPT-6 Astra 54.9 | Apex-J 63.8 | +8.9 |
-| HealthBench Professional, holdout | 225 | GPT-5.4, length-adjusted | GPT-6 Astra 65.7 | Apex-J 67.9 | +2.2, not significant |
+| HealthBench Professional, holdout | 225 | GPT-5.4 (official), length-adjusted | GPT-6 Astra 65.9 | Apex-J 68.6 | +2.7, not significant |
 | HealthBench Professional, all items | 524 | length-adjusted | Claude Sonnet 5 | Base | +0.3, a tie |
 | MedQA (USMLE, 4 options) | 1,273 | exact match | Gemini 3.1 Pro 92.3% | Base 95.5% | +3.2 |
 | psychosis-bench, safe interventions | 96 turns | gpt-4o-mini | Gemini 2.5 Flash 30.2% | Base 95.8% | +65.6 |

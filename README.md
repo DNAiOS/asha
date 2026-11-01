@@ -13,7 +13,7 @@ Point any OpenAI SDK at <code>https://api.askasha.org/v1</code>, or speak A2A v1
   <a href="https://api.askasha.org/openapi.json">OpenAPI 3.1</a> ·
   <a href="https://askasha.org/llms-full.txt">llms-full.txt</a> ·
   <a href="https://dnai.systems/benchmarks">Benchmarks</a> ·
-  <a href="https://doi.org/10.21203/rs.3.rs-10206806/v1">Preprint</a>
+  <a href="https://www.researchsquare.com/article/rs-10206806">Preprint</a>
 </p>
 
 <p>
@@ -124,20 +124,20 @@ Every statement in this table comes with a way to test it.
 Asha is an architecture around a language model: retrieval from the corpus above, specialist agents, claim falsification, and safety gates before and after generation. No model is fine-tuned. The test is paired: run a model alone and as the answer writer inside Asha, on the same items, under the same grader.
 
 <div align="center">
-  <img src="assets/benchmarks-paired.png" alt="Paired chart: HealthBench Hard 29.4 to 42.0, HealthBench 52.7 to 60.7, Vishwanath 500 54.9 to 63.8, HealthBench Professional holdout 65.7 to 67.9 not significant, MedQA 92.3 to 95.5, psychosis-bench 30.2 to 95.8" width="900" />
+  <img src="assets/benchmarks-paired.png" alt="Paired chart: HealthBench Hard 32.4 to 48.7, HealthBench 55.6 to 65.5, Vishwanath 500 54.9 to 63.8, HealthBench Professional holdout 65.9 to 68.6 not significant, MedQA 92.3 to 95.5, psychosis-bench 30.2 to 95.8" width="900" />
 </div>
 
 | Benchmark | n | Grader | Model alone | Inside Asha | Difference (points) |
 |---|---:|---|---|---|---|
-| HealthBench Hard | 1,000 | gpt-4.1 (official) | GPT-6 Astra 29.4 | Apex-J 42.0 | **+12.6** [10.7, 14.4]; length-adjusted +9.9 [8.1, 11.8] |
-| HealthBench, all conversations | 5,000 | gpt-4.1 (official) | GPT-6 Astra 52.7 | Apex-J 60.7 | **+8.0** [7.3, 8.7]; length-adjusted +5.6 [4.9, 6.3] |
-| HealthBench, Vishwanath et al. 500 | 500 | the study's three-judge panel | GPT-6 Astra 54.9 | Apex-J 63.8 | **+8.9**; gpt-4.1 on the same answers +8.4 [6.1, 10.7] |
-| HealthBench Professional, holdout | 225 | GPT-5.4, length-adjusted | GPT-6 Astra 65.7 | Apex-J 67.9 | +2.2, p = 0.23, not significant |
-| HealthBench Professional, all items | 524 | length-adjusted | Claude Sonnet 5 | Base | +0.3, p = 0.88, a tie |
+| HealthBench Hard | 1,000 | gpt-4.1 (official) | GPT-6 Astra 32.4 | Apex-J 48.7 | **+16.3** [14.6, 18.1]; length-adjusted +13.7 [12.0, 15.4] |
+| HealthBench, all conversations | 5,000 | gpt-4.1 (official) | GPT-6 Astra 55.6 | Apex-J 65.5 | **+9.8** [9.2, 10.5]; length-adjusted +7.4 [6.8, 8.0] |
+| HealthBench, Vishwanath et al. 500 | 500 | the study's three-judge panel | GPT-6 Astra 54.9 | Apex-J 63.8 | **+8.9**; gpt-4.1 on the same answers +9.2 [7.2, 11.2] |
+| HealthBench Professional, holdout | 225 | GPT-5.4 (official), length-adjusted | GPT-6 Astra 65.9 | Apex-J 68.6 | +2.7, p = 0.13, not significant; all 525 items +4.3, p < 0.001 |
+| HealthBench Professional, all items | 524 | GPT-5.4 (official), length-adjusted | Claude Sonnet 5 54.0 | Base 53.0 | -1.1, p = 0.57, within error |
 | MedQA (USMLE, 4 options) | 1,273 | exact match | Gemini 3.1 Pro 92.3% | Base 95.5% | **+3.2**, McNemar p = 2.0e-5 |
-| psychosis-bench, safe interventions | 96 turns | gpt-4o-mini (protocol judge) | Gemini 2.5 Flash 30.2% | Base 95.8% | **+65.6**, Fisher exact p = 4.0e-23 |
+| psychosis-bench, safe interventions | 96 turns | gpt-4o-mini (protocol judge) | Gemini 2.5 Flash 30.2% | Base 95.8% | **+65.6**; higher in 14 of 16 scenarios, sign test p = 1.2e-4 |
 
-Brackets are 95% confidence intervals of the paired difference. Asha's estimate is higher in six of seven comparisons; five are statistically significant. **Base** is the API default: one retrieval-grounded pass with safety gates. **Apex-J** (frozen 20 September 2026, Enterprise) adds a panel of specialist agents running Claude Sonnet 5 and Opus 5, claim falsification against the corpus, and GPT-6 Astra as the answer writer; those rows hold the answer-writing model fixed and measure the whole system against it.
+Brackets are 95% confidence intervals of the paired difference. Asha's estimate is higher in six of seven comparisons; five are statistically significant. Every HealthBench rubric score is graded the way OpenAI's reference implementation grades it, with each criterion's point value shown to the grader; the re-grade and a one-command reproduction are public at [EndlessRay/asha-benchmarks](https://github.com/EndlessRay/asha-benchmarks/tree/main/healthbench-reference-rendering-2026-10-31). **Base** is the API default: one retrieval-grounded pass with safety gates. **Apex-J** (frozen 20 September 2026, Enterprise) adds a panel of specialist agents running Claude Sonnet 5 and Opus 5, claim falsification against the corpus, and GPT-6 Astra as the answer writer; those rows hold the answer-writing model fixed and measure the whole system against it.
 
 On the Vishwanath et al. sample, the study published OpenEvidence at 62.6 and UpToDate Expert AI at 61.3 under the same panel, and frontier models running web search scored higher than every system here (GPT-5.2 88.0). Asha answers from its own corpus without web search.
 

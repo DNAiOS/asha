@@ -12,7 +12,6 @@ Point any OpenAI SDK at <code>https://api.askasha.org/v1</code>, or speak A2A v1
   <a href="https://askasha.org/developers/docs/overview">Docs</a> ·
   <a href="https://api.askasha.org/openapi.json">OpenAPI 3.1</a> ·
   <a href="https://askasha.org/llms-full.txt">llms-full.txt</a> ·
-  <a href="https://huggingface.co/spaces/DNAi-Systems/asha">Try it on Hugging Face</a> ·
   <a href="https://dnai.systems/benchmarks">Benchmarks</a> ·
   <a href="https://doi.org/10.21203/rs.3.rs-10206806/v1">Preprint</a>
 </p>
@@ -112,7 +111,7 @@ Every statement in this table comes with a way to test it.
 | Statement | How to check it |
 |---|---|
 | Every answer returns its sources | `dnai_meta.citations` on `/v1`; the `provenance` artifact on A2A (`citations`, `evidence_count`) |
-| Answers come from a curated corpus (PubMed, PMC full text, OpenAlex, StatPearls, DailyMed and FDA labels, ICD-10, Wikidata medical), hashed in public | `curl https://api.askasha.org/api/audit/corpus-state/public` returns a SHA-512 commitment and per-collection counts (111,157,411 vectors in the 20 collections it covers, 2026-10-31) |
+| Answers come from a curated corpus (PubMed, PMC full text, OpenAlex, StatPearls, DailyMed and FDA labels, ICD-10, Wikidata medical), hashed in public; questions about recent literature may add a live PubMed search, whose papers sit outside the hashed snapshot | `curl https://api.askasha.org/api/audit/corpus-state/public` returns a SHA-512 commitment and per-collection counts (111,157,411 vectors in the 20 collections it covers, 2026-10-31) |
 | The benchmark numbers below are the published register, byte for byte | `shasum -a 256 spec/benchmarks.json` gives `2d12352072bc3c44…`; `curl https://api.askasha.org/api/benchmarks/verify` compares the live API with the static copy |
 | Emergency routing and crisis resources stay on under every setting, including your own product name | `asha test` runs three live checks, one of them chest pain, and prints the task ids |
 | Memory is scoped to your key and can be switched off per call | `metadata.memory: "off"`; the [safety docs](https://askasha.org/developers/docs/safety) |
@@ -143,7 +142,7 @@ Brackets are 95% confidence intervals of the paired difference. Asha's estimate 
 On the Vishwanath et al. sample, the study published OpenEvidence at 62.6 and UpToDate Expert AI at 61.3 under the same panel, and frontier models running web search scored higher than every system here (GPT-5.2 88.0). Asha answers from its own corpus without web search.
 
 <details>
-<summary><b>Limits, as published in the register</b></summary>
+<summary><b>Limits, as published in the register (items 10 to 12 are the register's notes on individual rows)</b></summary>
 
 1. **Length.** Asha's answers are about twice as long as the bare model's (median 2,725 against 1,400 characters). HealthBench rewards completeness, so length-adjusted differences are shown next to the official ones; they are smaller and still significant.
 2. **Composer held fixed.** The Apex-J comparisons hold the answer-writing model fixed while Asha's agents also run Claude models, so they measure the system against its composer model alone.
@@ -154,6 +153,9 @@ On the Vishwanath et al. sample, the study published OpenEvidence at 62.6 and Up
 7. **Validation.** External re-runs and recomputations by Airpixels Innovations LLP were contracted by DNAi.
 8. **Withheld data.** HealthBench Professional per-item data are withheld at OpenAI's request, so those rows are aggregate only.
 9. **Pretraining exposure.** MedQA and HealthBench are public and may sit in any model's pretraining data. The paired difference controls for that; absolute scores do not.
+10. **MedQA formatting.** Asha routed 70% of questions to the smaller Gemini 3 Flash, so the model alone is the stronger arm. 51 of Asha's 66 paired wins are questions where the model alone gave no parseable answer (5.58% unparseable; Asha 0 of 1,273). On the questions both arms answered in a parseable form, the model alone scored higher (25 against 15 paired wins, exact p = 0.15).
+11. **psychosis-bench verdict.** Both pre-registered effect hypotheses passed, but agreement between the two judges fell below the pre-registered gate, so the formal verdict is inconclusive. The 96 turns come from a smaller number of scenarios, so the Fisher p-value treats correlated turns as independent.
+12. **HealthBench harm proxy.** The share of negative-point rubric criteria triggered was pre-registered to stay within +2.0 points of the model alone on all 5,000 conversations. It missed under the official grader (+2.8) and was met under GPT-5.4 (-0.3) and Claude Opus 4.8 (-0.4); factual-error criteria account for 59 of the 1,851 extra hits.
 
 </details>
 
@@ -191,7 +193,7 @@ A Base query includes 2,000 input and 2,000 output tokens; above that, $4 per mi
 |---|---|
 | [`examples/`](examples) | Runnable code: curl, OpenAI Python and Node, A2A, LangChain, LiteLLM, Vercel AI SDK, MCP configs |
 | [`spec/`](spec) | Snapshots: OpenAPI 3.1, the Asha A2A agent card, the benchmark register (`benchmarks.json`, byte-identical to dnai.systems) |
-| [`huggingface/`](huggingface) | Source of the [Hugging Face Space](https://huggingface.co/spaces/DNAi-Systems/asha) and [model card](https://huggingface.co/DNAi-Systems/asha) |
+| [`huggingface/`](huggingface) | Source of the Hugging Face Space and model card (not yet published) |
 | [`scripts/`](scripts) | `verify.py` (re-checks the register hash and the live API), `make_figures.py` (rebuilds the figures) |
 | [`assets/`](assets) | Banner, figures, the recorded demo and its transcript |
 

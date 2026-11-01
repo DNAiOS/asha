@@ -74,6 +74,10 @@ Per-item data, pre-registrations and the full limits: [EndlessRay/asha-benchmark
 - Frontier models running web search scored higher on the Vishwanath et al. sample (GPT-5.2 88.0). Asha answers from its own corpus without web search.
 - Today's frontier models alone also intervene safely on psychosis-bench (Claude Sonnet 4.5 100%); the psychosis-bench gap was measured against a May 2026 model.
 - External re-runs were performed by Airpixels Innovations LLP under contract to DNAi.
+- MedQA: 51 of Asha's 66 paired wins are questions the model alone failed to answer in a parseable form; on questions both arms answered, the model alone scored higher (25 against 15 paired wins, p = 0.15).
+- psychosis-bench: judge agreement fell below the pre-registered gate, so the formal verdict is inconclusive.
+- HealthBench harm proxy: missed its pre-registered +2.0 limit under the official grader (+2.8); met under GPT-5.4 and Claude Opus 4.8.
+- Questions about recent literature may add a live PubMed search; there is no general web search.
 
 ## Intended use
 

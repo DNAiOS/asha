@@ -1,0 +1,45 @@
+name: Bug report
+description: An example, the CLI, the MCP server or the API does something unexpected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste API keys or any real patient information. Security issues go through **Security → Report a vulnerability** instead.
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where
+      options:
+        - OpenAI-compatible /v1
+        - A2A v1.0 (message:send or message:stream)
+        - asha CLI
+        - MCP server
+        - An example in this repository
+        - Docs or specs
+    validations:
+      required: true
+  - type: input
+    id: task
+    attributes:
+      label: Request or task id
+      description: The `X-Request-ID` response header or the response `id` on /v1; the task id on A2A. It lets us find the exact request.
+  - type: textarea
+    id: steps
+    attributes:
+      label: What you ran
+      description: The smallest command or code that shows the problem.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected and what happened
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "Python 3.12, openai 1.x, macOS"

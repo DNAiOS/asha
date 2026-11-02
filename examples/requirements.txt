@@ -1,0 +1,4 @@
+openai>=1.40
+requests>=2.31
+langchain-openai>=0.2
+litellm>=1.40

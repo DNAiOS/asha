@@ -21,7 +21,7 @@
         "url": "https://dnai.systems"
     },
     "capabilities": {
-        "streaming": false,
+        "streaming": true,
         "pushNotifications": false,
         "extendedAgentCard": false
     },

@@ -112,7 +112,7 @@ Every statement in this table comes with a way to test it.
 |---|---|
 | Every answer returns its sources | `dnai_meta.citations` on `/v1`; the `provenance` artifact on A2A (`citations`, `evidence_count`) |
 | Answers come from a curated corpus (PubMed, PMC full text, OpenAlex, StatPearls, DailyMed and FDA labels, ICD-10, Wikidata medical), hashed in public; questions about recent literature may add a live PubMed search, whose papers sit outside the hashed snapshot | `curl https://api.askasha.org/api/audit/corpus-state/public` returns a SHA-512 commitment and per-collection counts (111,157,411 vectors in the 20 collections it covers, 2026-10-31) |
-| The benchmark numbers below are the published register, byte for byte | `shasum -a 256 spec/benchmarks.json` gives `2d12352072bc3c44…`; `curl https://api.askasha.org/api/benchmarks/verify` compares the live API with the static copy |
+| The benchmark numbers below are the published register, byte for byte | `shasum -a 256 spec/benchmarks.json` matches `register_sha256` from `curl https://api.askasha.org/api/benchmarks/verify`, which also compares the live API with the static copy; `python scripts/verify.py` runs both checks |
 | Emergency routing and crisis resources stay on under every setting, including your own product name | `asha test` runs three live checks, one of them chest pain, and prints the task ids |
 | Memory is scoped to your key and can be switched off per call | `metadata.memory: "off"`; the [safety docs](https://askasha.org/developers/docs/safety) |
 | The answer is information; a licensed clinician decides | Stated in every [clinical-use rule](https://askasha.org/developers/docs/safety); keep a clinician in the loop for diagnosis and treatment |

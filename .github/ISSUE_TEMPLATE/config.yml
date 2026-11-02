@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: API docs
+    url: https://askasha.org/developers/docs/overview
+    about: Endpoints, limits, safety rules and the BAA.
+  - name: Is the API up?
+    url: https://api.askasha.org/a2a/v1/health
+    about: Live health of the API and the agent fleet.
+  - name: Account, billing or keys
+    url: mailto:support@dnai.systems
+    about: Questions about your plan or your key go to support.

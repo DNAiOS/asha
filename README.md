@@ -67,6 +67,17 @@ curl -X POST https://api.askasha.org/api/a2a/signup \
   -d '{"email": "you@company.com", "name": "Your product", "product": "asha"}'
 ```
 
+Run every example from a clone:
+
+```bash
+git clone https://github.com/DNAiOS/asha && cd asha
+python -m venv .venv && . .venv/bin/activate
+pip install -r examples/requirements.txt
+export ASHA_API_KEY=dnai_a2a_...          # or copy .env.example to .env
+python examples/python/openai_quickstart.py
+python scripts/verify.py                  # checks the register and the live API; no key needed
+```
+
 ---
 
 ## Four ways in
@@ -196,6 +207,17 @@ A Base query includes 2,000 input and 2,000 output tokens; above that, $4 per mi
 | [`huggingface/`](huggingface) | Source of the Hugging Face Space and model card (not yet published) |
 | [`scripts/`](scripts) | `verify.py` (re-checks the register hash and the live API), `make_figures.py` (rebuilds the figures) |
 | [`assets/`](assets) | Banner, figures, the recorded demo and its transcript |
+
+---
+
+## Help
+
+| Need | Where |
+|---|---|
+| A bug in an example, the CLI, the MCP server or the API | [Open an issue](https://github.com/DNAiOS/asha/issues/new/choose); include the request id, never a key or patient data |
+| A security problem | Privately, through **Security → Report a vulnerability** ([policy](SECURITY.md)) |
+| Your plan, billing or key | support@dnai.systems |
+| Is the API up? | `curl https://api.askasha.org/a2a/v1/health` |
 
 ---
 

@@ -1,0 +1,15 @@
+name: Feature or integration request
+description: A framework example, an API capability or a docs page you need.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What you are building and what is missing
+    validations:
+      required: true
+  - type: textarea
+    id: shape
+    attributes:
+      label: What a good answer looks like
+      description: The call you would like to make, or the example you would like to copy.

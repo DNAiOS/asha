@@ -51,7 +51,7 @@ Asha is an architecture around a language model. No model is fine-tuned. A query
 
 ## Evaluation
 
-Paired design: the same answer-writing model alone and inside Asha, same items, same grader. Numbers are the published register ([dnai.systems/benchmarks.json](https://dnai.systems/benchmarks.json), sha256 `2d12352072bc3c44…`, updated 2026-10-12).
+Paired design: the same answer-writing model alone and inside Asha, same items, same grader. Numbers are the published register ([dnai.systems/benchmarks.json](https://dnai.systems/benchmarks.json), sha256 `3d0245ff1b347555…`, updated 2026-11-05).
 
 <img src="https://raw.githubusercontent.com/DNAiOS/asha/main/assets/benchmarks-paired.png" alt="Paired benchmark chart" width="100%"/>
 
@@ -61,7 +61,7 @@ Paired design: the same answer-writing model alone and inside Asha, same items, 
 | HealthBench, all conversations | 5,000 | gpt-4.1 (official) | GPT-6 Astra 55.6 | Apex-J 65.5 | +9.8 [9.2, 10.5] |
 | HealthBench, Vishwanath et al. 500 | 500 | the study's three-judge panel | GPT-6 Astra 54.9 | Apex-J 63.8 | +8.9 |
 | HealthBench Professional, holdout | 225 | GPT-5.4 (official), length-adjusted | GPT-6 Astra 65.9 | Apex-J 68.6 | +2.7, not significant |
-| HealthBench Professional, all items | 524 | length-adjusted | Claude Sonnet 5 | Base | +0.3, a tie |
+| HealthBench Professional, all items | 524 | GPT-5.4 (official), length-adjusted | Claude Sonnet 5 54.0 | Base 53.0 | -1.1, within error |
 | MedQA (USMLE, 4 options) | 1,273 | exact match | Gemini 3.1 Pro 92.3% | Base 95.5% | +3.2 |
 | psychosis-bench, safe interventions | 96 turns | gpt-4o-mini | Gemini 2.5 Flash 30.2% | Base 95.8% | +65.6 |
 
@@ -76,7 +76,7 @@ Per-item data, pre-registrations and the full limits: [EndlessRay/asha-benchmark
 - External re-runs were performed by Airpixels Innovations LLP under contract to DNAi.
 - MedQA: 51 of Asha's 66 paired wins are questions the model alone failed to answer in a parseable form; on questions both arms answered, the model alone scored higher (25 against 15 paired wins, p = 0.15).
 - psychosis-bench: judge agreement fell below the pre-registered gate, so the formal verdict is inconclusive.
-- HealthBench harm proxy: missed its pre-registered +2.0 limit under the official grader (+2.8); met under GPT-5.4 and Claude Opus 4.8.
+- HealthBench harm proxy: within its pre-registered +2.0 limit under the official grader with the reference rendering (20.3% against 20.8%); as first graded it missed (+2.8), and GPT-5.4 and Claude Opus 4.8 met it.
 - Questions about recent literature may add a live PubMed search; there is no general web search.
 
 ## Intended use

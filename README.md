@@ -59,6 +59,23 @@ print(meta["evidence_count"], "sources", meta["citations"][:3])
 
 Two settings change: `base_url` and the key. Sources arrive in `dnai_meta` on every answer. [More examples](examples/).
 
+## SDKs, MCP server, cookbook
+
+| Package | Install | What it adds |
+|---|---|---|
+| [`askasha` (Python)](sdk/python) | `pip install askasha` | The `asha` object as typed models; `verify`, `clinical.med_check`, `search`, `rerank`, `receipts`, `models`; streaming with the final `asha` object; retries on `Retry-After` with an Idempotency-Key on every POST |
+| [`askasha` (TypeScript)](sdk/typescript) | `npm install askasha` | The same surface on `openai` and `@anthropic-ai/sdk`; ESM and CommonJS |
+| [`@askasha/mcp`](examples/mcp) | `npx -y @askasha/mcp` | MCP tools `ask_asha`, `verify_claim`, `med_check`, `search_evidence` |
+| [Cookbook](cookbook) | `python cookbook/run_all.py` | Ten runnable recipes: patient assistant with escalation, A&P template, JSON Schema subagent, EHR summary, claim checks, med-check to FHIR, search plus rerank, base_url switch, Glass migration, idempotent retries and receipts |
+
+```python
+from askasha import Asha
+
+client = Asha()  # reads ASHA_API_KEY
+answer = client.chat.create(messages=[{"role": "user", "content": "First-line drug for hypertension?"}])
+print(answer.text, [r.display for r in answer.asha.references], answer.receipt_id)
+```
+
 Get a key without leaving the terminal:
 
 ```bash

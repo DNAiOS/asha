@@ -1,0 +1,9 @@
+{
+  "name": "asha-repo",
+  "private": true,
+  "description": "Workspace root for the askasha TypeScript SDK and the @askasha/mcp server.",
+  "workspaces": [
+    "sdk/typescript",
+    "examples/mcp"
+  ]
+}

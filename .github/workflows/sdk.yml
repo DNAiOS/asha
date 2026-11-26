@@ -1,0 +1,64 @@
+name: SDKs and MCP server
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    defaults:
+      run:
+        working-directory: sdk/python
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e ".[dev]"
+      - run: ruff check src tests
+      - run: mypy
+        if: matrix.python-version == '3.12'
+      - run: pytest -q
+      - run: python -m py_compile ../../cookbook/*.py
+      - name: Build sdist and wheel
+        if: matrix.python-version == '3.12'
+        run: pip install build twine && python -m build && twine check dist/*
+
+  typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - name: Generated types match the live OpenAPI document
+        working-directory: sdk/typescript
+        run: |
+          npm run gen:types
+          git diff --quiet src/openapi.d.ts || echo "::warning::src/openapi.d.ts drifted from https://api.askasha.org/openapi.json; run npm run gen:types"
+          git checkout -- src/openapi.d.ts
+      - name: SDK typecheck, test, build
+        working-directory: sdk/typescript
+        run: npm run typecheck && npm test && npm run build
+      - name: ESM and CJS entry points load
+        working-directory: sdk/typescript
+        run: |
+          node -e "const a=require('./dist/index.cjs'); if (typeof a.Asha!=='function') process.exit(1)"
+          node --input-type=module -e "import {Asha} from './dist/index.js'; if (typeof Asha!=='function') process.exit(1)"
+      - name: MCP server typecheck, test, build
+        working-directory: examples/mcp
+        run: npm run typecheck && npm test && npm run build
+      - name: npm pack dry runs
+        run: |
+          npm pack --dry-run -w sdk/typescript
+          npm pack --dry-run -w examples/mcp

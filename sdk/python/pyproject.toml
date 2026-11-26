@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "askasha"
+version = "0.1.0"
+description = "Python client for the Asha API, made by DNAi Systems: cited medical answers, claim checks, medication checks, evidence search and rerank."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [{ name = "DNAi Systems", email = "hello@dnai.systems" }]
+keywords = ["asha", "medical", "healthcare", "llm", "openai", "anthropic", "citations", "fhir"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Healthcare Industry",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+  "Typing :: Typed",
+]
+dependencies = [
+  "httpx>=0.25,<1",
+  "pydantic>=2.5,<3",
+  "openai>=1.40,<3",
+]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.40,<1"]
+dev = ["anthropic>=0.40,<1", "pytest>=8", "mypy>=1.10", "ruff>=0.5"]
+
+[project.urls]
+Homepage = "https://askasha.org/developers"
+Documentation = "https://askasha.org/developers/docs/sdks"
+Source = "https://github.com/DNAiOS/asha/tree/main/sdk/python"
+Issues = "https://github.com/DNAiOS/asha/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/askasha"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 125
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "W"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+packages = ["askasha"]
+mypy_path = "src"

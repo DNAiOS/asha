@@ -1,0 +1,958 @@
+{
+ "chat": {
+  "id": "chatcmpl-f2369703339e49afba2678de",
+  "object": "chat.completion",
+  "created": 1795675080,
+  "model": "dnai/asha-base",
+  "choices": [
+   {
+    "index": 0,
+    "message": {
+     "role": "assistant",
+     "content": "**Uncomplicated high blood pressure has three equally accepted first-line drug classes, not one single drug: thiazide diuretics (water pills), long-acting calcium channel blockers, and renin-angiotensin system inhibitors (ACE inhibitors or ARBs) [1][2].** Beta-blockers are no longer first-line, because trials found them less effective at preventing stroke and other cardiovascular events [3]. The choice among the three depends on your other conditions. For example, an ACE inhibitor or ARB is preferred if you have protein in the urine (albuminuria) [4], and older adults on thiazides need electrolyte checks after starting [1]. Most people end up needing more than one medicine to reach target [2]. Your clinician or pharmacist should choose the specific drug and dose, and guidelines vary somewhat by region."
+    },
+    "finish_reason": "stop"
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 17,
+   "completion_tokens": 203,
+   "total_tokens": 220,
+   "dnai_token_counts_estimated": true
+  },
+  "dnai_meta": {
+   "depth_requested": "base",
+   "depth_served": "base",
+   "evidence_count": 53,
+   "citations": [
+    "PMID:23809864",
+    "PMID:38835924",
+    "PMID:40443569",
+    "PMID:40955890",
+    "PMID:33190561",
+    "PMID:17253471",
+    "PMID:beb7bfd8a3c9819bf516e507d87f8016163df79296e724267c035076d7b0a28dbb4997a3fcf50519f3116a71eb2e677795461265b10e2cd6da028017cfddbe17",
+    "PMID:34775787",
+    "PMID:41915803",
+    "PMID:16003449",
+    "PMID:14968142"
+   ],
+   "task_gravity": 0.5
+  },
+  "asha": {
+   "object": "asha.answer",
+   "version": 1,
+   "references": [
+    {
+     "id": "r1",
+     "marker": "[1]",
+     "n": 1,
+     "type": "corpus",
+     "title": "Hypertension in adults: diagnosis and management",
+     "display": "Hypertension in adults: diagnosis and management",
+     "source": null,
+     "url": null,
+     "pmid": null,
+     "doi": null,
+     "locator": {
+      "pmid": null,
+      "doi": null,
+      "pmcid": null,
+      "url": null,
+      "page": null
+     },
+     "evidence_type": null,
+     "retrieved_at": "2026-11-26T06:38:16Z"
+    },
+    {
+     "id": "r2",
+     "marker": "[2]",
+     "n": 2,
+     "type": "drug_label",
+     "title": "FDA label: LISINOPRIL (effective 20260505)",
+     "display": "FDA label: LISINOPRIL (effective 20260505)",
+     "source": "FDA DRUG LABELS V2",
+     "url": null,
+     "pmid": null,
+     "doi": null,
+     "locator": {
+      "pmid": null,
+      "doi": null,
+      "pmcid": null,
+      "url": null,
+      "page": null
+     },
+     "evidence_type": null,
+     "retrieved_at": "2026-11-26T06:38:16Z"
+    }
+   ],
+   "grounding": {
+    "evidence_count": 53,
+    "cited_count": 4,
+    "coverage": "cited",
+    "unmapped_markers": [],
+    "corpus_commitment": {
+     "hash": "48ba3ec2f0e6a9dc22253202c3d2b425dd3ef154016917b9a7793faffa837aa4ac0d09a02ccc1be745a432c03dcefe7711a0766e014a96c31127847bccaa5b5e",
+     "algorithm": "sha512",
+     "collections": 20,
+     "as_of": "2026-11-26T06:34:34.162745+00:00",
+     "verify_url": "https://api.askasha.org/api/audit/corpus-state/public"
+    },
+    "references": [
+     {
+      "id": "r1",
+      "marker": "[1]",
+      "type": "dataset",
+      "display": "Hypertension in adults: diagnosis and management",
+      "locator": {
+       "pmid": null,
+       "doi": null,
+       "pmcid": null,
+       "url": null,
+       "page": null
+      },
+      "year": null,
+      "journal": null,
+      "organization": null,
+      "provenance": "corpus",
+      "supports": []
+     }
+    ],
+    "uncited_sentences": null,
+    "verification": {
+     "status": "not_run",
+     "method": "none",
+     "flagged_claims": []
+    }
+   },
+   "safety": {
+    "escalation": {
+     "level": "none",
+     "message": null,
+     "action": "",
+     "timeframe": ""
+    },
+    "refusal": {
+     "refused": false,
+     "category": null
+    },
+    "insufficient_evidence": false,
+    "phi_detected": false,
+    "phi_identifier_kinds": [],
+    "intended_user": "sandbox",
+    "audience_served": "consumer",
+    "emergency": false,
+    "uncertainty": null,
+    "phi_redacted": false,
+    "requires_clinician_review": true
+   },
+   "basis": {
+    "inputs": {
+     "messages": 1,
+     "history_turns": 0,
+     "caller_instruction_chars": 0,
+     "response_format": "text",
+     "metadata_keys": [
+      "verbosity"
+     ],
+     "files": 0,
+     "audience": null,
+     "memory": "off"
+    },
+    "sources": [
+     {
+      "id": "r1",
+      "marker": "[1]",
+      "n": 1,
+      "type": "corpus",
+      "title": "Hypertension in adults: diagnosis and management",
+      "display": "Hypertension in adults: diagnosis and management",
+      "source": null,
+      "url": null,
+      "pmid": null,
+      "doi": null,
+      "locator": {
+       "pmid": null,
+       "doi": null,
+       "pmcid": null,
+       "url": null,
+       "page": null
+      },
+      "evidence_type": null,
+      "retrieved_at": "2026-11-26T06:38:16Z"
+     }
+    ],
+    "datasets_consulted": [],
+    "missing_data": [
+     "No patient-specific context (age, sex, history, medications) was supplied."
+    ],
+    "limitations": [
+     "Reference information for the stated audience; it is not a diagnosis, a prescription or a substitute for a clinician who knows the patient.",
+     "Grounded in the committed corpus at answer time; evidence published after the corpus commitment may be missing.",
+     "Answer text is generated by a language model over the cited evidence and can contain errors; check the references."
+    ],
+    "model": {
+     "id": "asha-base",
+     "snapshot": "asha-base-2026-12-01",
+     "depth_served": "base"
+    },
+    "pipeline_version": "asha-pipeline-2026-12-01"
+   },
+   "receipt_id": "rcpt_1xXfF1nUyDYrbtdOaXiUY4Tc",
+   "usage": {
+    "input_tokens": 17,
+    "output_tokens": 203,
+    "estimated": true,
+    "tier_requested": "base",
+    "tier_served": "base"
+   },
+   "receipt": {
+    "id": "rcpt_1xXfF1nUyDYrbtdOaXiUY4Tc",
+    "answer_sha256": "95e7c39f7e8c0a5ceeee2b137433d9e8ca0ff643061aa73339f2dba7a7eae9b6",
+    "url": "https://api.askasha.org/v1/receipts/rcpt_1xXfF1nUyDYrbtdOaXiUY4Tc"
+   }
+  }
+ },
+ "verify": {
+  "id": "verify_70713f80ddee4240aaadbe86",
+  "object": "verification",
+  "created": 1795675054,
+  "model": "asha-verify",
+  "claim": "Metformin is first-line therapy for most adults with type 2 diabetes.",
+  "verdict": "supported",
+  "caveat": "A claim that survives is not refuted, which is weaker than true.",
+  "scope": "Corpus passages entail the claim and none contradict it.",
+  "e_value": 0.28329,
+  "evidence_for": [
+   {
+    "id": "r1",
+    "rank": 1,
+    "type": "literature",
+    "title": "Pharmacologic approaches to glycemic treatment",
+    "snippet": "Metformin is the preferred initial agent for most adults with type 2 diabetes.",
+    "source": "pubmed_clinical_trials",
+    "year": null,
+    "score": 0.7607,
+    "collection": "clinical_trials_recent",
+    "retracted": false,
+    "refuted": false,
+    "locator": {
+     "collection": "clinical_trials_recent",
+     "point_id": "1083618624871554978",
+     "pmid": null,
+     "doi": null,
+     "pmcid": null,
+     "url": null
+    },
+    "stance": "supports",
+    "nli": {
+     "entailment": 0.0018,
+     "contradiction": 0.0103,
+     "sentence_entailment": 0.0069,
+     "sentence_contradiction": 0.9559,
+     "reverse_contradiction": 0.84
+    }
+   }
+  ],
+  "retracted_related": [
+   {
+    "id": "r3",
+    "rank": 3,
+    "type": "literature",
+    "title": "Metformin Decreases Insulin Resistance in Type 1 Diabetes Through Regulating p53 and RAP2A in vitro and in vivo.",
+    "snippet": "Patients with type 1 diabetes (T1D) are associated with a high risk of multiple complications, so the development of T1D treatment is urgently needed. This study was set out to explore the molecular mechanism of metformin in the treatment of T1D insulin resistance. Subcutaneous adipose tissues were collected from 68 T1D patients and 51 healthy controls. Insulin resistance model rats and cells\u2026",
+    "source": "retraction_watch_pubmed",
+    "year": 2020,
+    "score": 0.7363,
+    "collection": "retracted_publications",
+    "retracted": true,
+    "refuted": false,
+    "locator": {
+     "collection": "retracted_publications",
+     "point_id": "581268898267194139",
+     "pmid": null,
+     "doi": null,
+     "pmcid": null,
+     "url": null
+    },
+    "stance": "related",
+    "nli": {
+     "entailment": 0.0027,
+     "contradiction": 0.1077,
+     "sentence_entailment": 0.0042,
+     "sentence_contradiction": 0.9485,
+     "reverse_contradiction": 0.1812
+    },
+    "contradicting_sentence": "Patients with type 1 diabetes (T1D) are associated with a high risk of multiple complications, so the development of T1D treatment is urgently needed."
+   }
+  ],
+  "evidence_counts": {
+   "for": 1,
+   "against": 0,
+   "related": 62,
+   "retracted_related": 10,
+   "list_cap": 10
+  },
+  "stance_method": "nli",
+  "collections_searched": [
+   "retracted_publications",
+   "scientific_refutations",
+   "fda_drug_recalls"
+  ],
+  "latency_ms": 848,
+  "usage": {
+   "billable_units": 1,
+   "unit": "claim",
+   "amount_usd": 0.03,
+   "price_card": "legacy"
+  },
+  "asha": {
+   "model": {
+    "id": "asha-verify",
+    "status": "preview",
+    "snapshot": null
+   },
+   "intended_user": "sandbox",
+   "safety": {
+    "phi_detected": false,
+    "phi_redacted": false,
+    "identifier_kinds": []
+   },
+   "basis": {
+    "inputs": {
+     "domain": "medical",
+     "top_k": 3,
+     "context_chars": 0
+    },
+    "pipeline_version": "asha-pipeline-2026-12-01"
+   },
+   "usage": {
+    "billable_units": 1,
+    "unit": "claim",
+    "amount_usd": 0.03,
+    "price_card": "legacy"
+   },
+   "grounding": {
+    "corpus_commitment": {
+     "hash": "48ba3ec2f0e6a9dc22253202c3d2b425dd3ef154016917b9a7793faffa837aa4ac0d09a02ccc1be745a432c03dcefe7711a0766e014a96c31127847bccaa5b5e",
+     "algorithm": "sha512",
+     "collections": 20,
+     "as_of": "2026-11-26T06:34:34.104015+00:00",
+     "verify_url": "https://api.askasha.org/api/audit/corpus-state/public"
+    }
+   }
+  },
+  "evidence_against": []
+ },
+ "med_check": {
+  "id": "medchk_513c909ecca9449bbefacd8b",
+  "created": 1795675051,
+  "object": "clinical.med_check",
+  "model": "asha-med-check",
+  "display_name": "Asha medication check",
+  "rule_table_version": "2026-11-25.1",
+  "audience": "consumer",
+  "findings_text": "1 finding in the rules checked (2 drugs checked against 75 rules).",
+  "next_step": "Talk with your prescriber or pharmacist about these results before your next dose. Do not stop or change a medicine on your own unless they tell you to.",
+  "interactions": [
+   {
+    "id": "interaction:warfarin_potentiator:m1|m2",
+    "kind": "interaction",
+    "severity": "major",
+    "title": "INR elevation",
+    "medications": [
+     "warfarin",
+     "fluconazole"
+    ],
+    "management": "Talk with your prescriber or pharmacist about this before your next dose. Do not stop or change a medicine on your own unless they tell you to.",
+    "mechanism": "CYP2C9 inhibition or gut flora effect raises INR.",
+    "detail": "warfarin + fluconazole: CYP2C9 inhibition or gut flora effect raises INR.",
+    "source": "Warfarin FDA label, section 7 (CYP2C9 inhibitors and other potentiators)",
+    "rule": "warfarin_potentiator"
+   }
+  ],
+  "alerts": [
+   {
+    "id": "interaction:warfarin_potentiator:m1|m2",
+    "kind": "interaction",
+    "severity": "major",
+    "title": "INR elevation",
+    "medications": [
+     "warfarin",
+     "fluconazole"
+    ],
+    "management": "Talk with your prescriber or pharmacist about this before your next dose. Do not stop or change a medicine on your own unless they tell you to.",
+    "mechanism": "CYP2C9 inhibition or gut flora effect raises INR.",
+    "detail": "warfarin + fluconazole: CYP2C9 inhibition or gut flora effect raises INR.",
+    "source": "Warfarin FDA label, section 7 (CYP2C9 inhibitors and other potentiators)",
+    "rule": "warfarin_potentiator"
+   },
+   {
+    "id": "insufficient_data:dose:fluconazole:m2",
+    "kind": "insufficient_data",
+    "severity": "info",
+    "title": "Dose not checked",
+    "medications": [
+     "fluconazole"
+    ],
+    "management": "",
+    "detail": "Could not compute a daily dose for fluconazole from the dose and sig on file. Confirm strength and frequency.",
+    "source": "DNAi rule table coverage: check not run",
+    "rule": "dose:fluconazole"
+   },
+   {
+    "id": "insufficient_data:renal:fluconazole:m2",
+    "kind": "insufficient_data",
+    "severity": "info",
+    "title": "Renal dosing not checked",
+    "medications": [
+     "fluconazole"
+    ],
+    "management": "",
+    "detail": "No eGFR or creatinine on file; renal limits for fluconazole were not checked.",
+    "source": "DNAi rule table coverage: check not run",
+    "rule": "renal:fluconazole"
+   }
+  ],
+  "high_alert": [
+   {
+    "medication": "warfarin",
+    "basis": "antithrombotic agents: warfarin"
+   }
+  ],
+  "unchecked": [
+   {
+    "type": "check",
+    "check": "dose:fluconazole",
+    "reason": "Could not compute a daily dose for fluconazole from the dose and sig on file. Confirm strength and frequency."
+   },
+   {
+    "type": "check",
+    "check": "renal:fluconazole",
+    "reason": "No eGFR or creatinine on file; renal limits for fluconazole were not checked."
+   }
+  ],
+  "summary": {
+   "contraindicated": 0,
+   "major": 1,
+   "moderate": 0,
+   "info": 2
+  },
+  "blocking": [],
+  "drugs_checked": 2,
+  "rules_checked": 75,
+  "format": "fhir",
+  "fhir": {
+   "resourceType": "Bundle",
+   "type": "collection",
+   "entry": [
+    {
+     "resource": {
+      "resourceType": "DetectedIssue",
+      "id": "interaction-warfarin-potentiator-m1-m2",
+      "status": "preliminary",
+      "severity": "high",
+      "code": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+         "code": "DRG",
+         "display": "Drug Interaction Alert"
+        }
+       ],
+       "text": "INR elevation"
+      },
+      "implicated": [
+       {
+        "identifier": {
+         "value": "m1"
+        },
+        "display": "warfarin"
+       },
+       {
+        "identifier": {
+         "value": "m2"
+        },
+        "display": "fluconazole"
+       }
+      ],
+      "detail": "warfarin + fluconazole: CYP2C9 inhibition or gut flora effect raises INR.",
+      "evidence": [
+       {
+        "detail": [
+         {
+          "display": "Warfarin FDA label, section 7 (CYP2C9 inhibitors and other potentiators)"
+         }
+        ]
+       }
+      ],
+      "author": {
+       "display": "DNAi med-check rule table 2026-11-25.1"
+      },
+      "mitigation": [
+       {
+        "action": {
+         "text": "Talk with your prescriber or pharmacist about this before your next dose. Do not stop or change a medicine on your own unless they tell you to."
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "usage": {
+   "billable_units": 0,
+   "unit": "call",
+   "amount_usd": 0.0,
+   "price_card": "legacy"
+  },
+  "asha": {
+   "model": {
+    "id": "asha-med-check",
+    "status": "ga",
+    "snapshot": null
+   },
+   "intended_user": "sandbox",
+   "safety": {
+    "phi_detected": false,
+    "phi_redacted": false,
+    "identifier_kinds": []
+   },
+   "basis": {
+    "inputs": {
+     "medications": 2,
+     "format": "fhir",
+     "audience": "consumer"
+    },
+    "pipeline_version": "asha-pipeline-2026-12-01"
+   },
+   "usage": {
+    "billable_units": 0,
+    "unit": "call",
+    "amount_usd": 0.0,
+    "price_card": "legacy"
+   }
+  }
+ },
+ "search": {
+  "id": "search_e9dfe05311e6496eb80c08a7",
+  "object": "search.results",
+  "created": 1795675053,
+  "model": "asha-search",
+  "query": "anticoagulation in atrial fibrillation with CKD",
+  "data": [
+   {
+    "id": "r1",
+    "rank": 1,
+    "type": "literature",
+    "title": "The role of anticoagulation therapy for stroke prevention in older atrial fibrillation (AF) patients",
+    "snippet": "The role of anticoagulation therapy for stroke prevention in older atrial fibrillation (AF) patients with chronic kidney disease (CKD) remains unclear. Therefore, we conducted a meta-analysis to explore the efficacy and safety of anticoagulation therapy in this population.",
+    "source": "PubMed KG 2.0",
+    "year": null,
+    "score": 2.5632,
+    "collection": "pubmed",
+    "retracted": false,
+    "refuted": false,
+    "locator": {
+     "collection": "pubmed",
+     "point_id": null,
+     "pmid": "31626146",
+     "doi": null,
+     "pmcid": null,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31626146/"
+    }
+   },
+   {
+    "id": "r2",
+    "rank": 2,
+    "type": "literature",
+    "title": "Meta-analysis of the influence of chronic kidney disease on the risk of thromboembolism among patients with nonvalvular atrial fibrillation.",
+    "snippet": "Meta-analysis of the influence of chronic kidney disease on the risk of thromboembolism among patients with nonvalvular atrial fibrillation. (2014) [Cited: 48] Chronic kidney disease (CKD) and atrial fibrillation (AF) frequently coexist. However, the extent to which CKD increases the risk of thromboembolism in patients with nonvalvular AF and the benefits of anticoagulation in this group remain\u2026",
+    "source": "PubMed KG 2.0",
+    "year": 2014,
+    "score": 2.528,
+    "collection": "pubmed",
+    "retracted": false,
+    "refuted": false,
+    "locator": {
+     "collection": "pubmed",
+     "point_id": null,
+     "pmid": "25001152",
+     "doi": null,
+     "pmcid": null,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25001152/"
+    }
+   }
+  ],
+  "latency_ms": 1971,
+  "usage": {
+   "billable_units": 1,
+   "unit": "search",
+   "amount_usd": 0.002,
+   "price_card": "legacy"
+  },
+  "asha": {
+   "model": {
+    "id": "asha-search",
+    "status": "preview",
+    "snapshot": null
+   },
+   "intended_user": "sandbox",
+   "safety": {
+    "phi_detected": false,
+    "phi_redacted": false,
+    "identifier_kinds": []
+   },
+   "basis": {
+    "inputs": {
+     "top_k": 3,
+     "domain": "general",
+     "filters": {}
+    },
+    "pipeline_version": "asha-pipeline-2026-12-01"
+   },
+   "usage": {
+    "billable_units": 1,
+    "unit": "search",
+    "amount_usd": 0.002,
+    "price_card": "legacy"
+   },
+   "grounding": {
+    "corpus_commitment": {
+     "hash": "48ba3ec2f0e6a9dc22253202c3d2b425dd3ef154016917b9a7793faffa837aa4ac0d09a02ccc1be745a432c03dcefe7711a0766e014a96c31127847bccaa5b5e",
+     "algorithm": "sha512",
+     "collections": 20,
+     "as_of": "2026-11-26T06:34:34.104015+00:00",
+     "verify_url": "https://api.askasha.org/api/audit/corpus-state/public"
+    }
+   }
+  }
+ },
+ "rerank": {
+  "id": "rerank_a822c5f45ca24210b96e4674",
+  "object": "rerank",
+  "created": 1795675051,
+  "model": "asha-rerank",
+  "results": [
+   {
+    "index": 0,
+    "relevance_score": 0.412598,
+    "document": {
+     "text": "Metformin remains first-line."
+    }
+   },
+   {
+    "index": 2,
+    "relevance_score": 0.001889,
+    "document": {
+     "text": "SGLT2 inhibitors reduce HF admissions."
+    }
+   }
+  ],
+  "latency_ms": 55,
+  "usage": {
+   "billable_units": 1,
+   "unit": "search_unit_100_documents",
+   "amount_usd": 0.0005,
+   "price_card": "legacy"
+  },
+  "asha": {
+   "model": {
+    "id": "asha-rerank",
+    "status": "ga",
+    "snapshot": null
+   },
+   "intended_user": "sandbox",
+   "safety": {
+    "phi_detected": false,
+    "phi_redacted": false,
+    "identifier_kinds": []
+   },
+   "basis": {
+    "inputs": {
+     "documents": 3,
+     "top_n": 2
+    },
+    "pipeline_version": "asha-pipeline-2026-12-01"
+   },
+   "usage": {
+    "billable_units": 1,
+    "unit": "search_unit_100_documents",
+    "amount_usd": 0.0005,
+    "price_card": "legacy"
+   }
+  }
+ },
+ "receipt": {
+  "id": "rcpt_1xXfF1nUyDYrbtdOaXiUY4Tc",
+  "answer_sha256": "95e7c39f7e8c0a5ceeee2b137433d9e8ca0ff643061aa73339f2dba7a7eae9b6",
+  "receipt": {
+   "agent": "Asha",
+   "ledger": {
+    "recorded": false,
+    "text_matches": null
+   },
+   "sources": [
+    {
+     "n": 1,
+     "doi": null,
+     "url": null,
+     "kind": "reference",
+     "pmid": null,
+     "year": null,
+     "title": "Hypertension in adults: diagnosis and management",
+     "issuer": null,
+     "guideline_id": null,
+     "evidence_type": null
+    }
+   ],
+   "version": 1,
+   "model_tier": "Base",
+   "receipt_id": "rcpt_1xXfF1nUyDYrbtdOaXiUY4Tc",
+   "answered_at": "2026-11-26T06:38:16Z",
+   "collections": [],
+   "retrieval_ms": null,
+   "answer_sha256": "95e7c39f7e8c0a5ceeee2b137433d9e8ca0ff643061aa73339f2dba7a7eae9b6",
+   "evidence_count": 53,
+   "corpus_commitment": {
+    "value": "48ba3ec2f0e6a9dc22253202c3d2b425dd3ef154016917b9a7793faffa837aa4ac0d09a02ccc1be745a432c03dcefe7711a0766e014a96c31127847bccaa5b5e",
+    "algorithm": "sha512",
+    "computed_at": "2026-11-26T06:34:34.162745+00:00",
+    "collections_counted": 20
+   },
+   "answer_fingerprint": {
+    "value": "95e7c39f7e8c0a5ceeee2b137433d9e8ca0ff643061aa73339f2dba7a7eae9b6",
+    "algorithm": "sha256",
+    "canonical_form": "v1"
+   }
+  }
+ },
+ "models": {
+  "object": "list",
+  "data": [
+   {
+    "id": "asha",
+    "object": "model",
+    "created": 1764547200,
+    "owned_by": "dnai-systems",
+    "display_name": "Asha",
+    "description": "Alias for the account's default tier (Base for customer keys today).",
+    "status": "ga",
+    "class": "router",
+    "context_window": 128000,
+    "max_output_tokens": 4096,
+    "input_modalities": [
+     "text"
+    ],
+    "output_modalities": [
+     "text",
+     "json"
+    ],
+    "capabilities": {
+     "stream": true,
+     "json_schema": true,
+     "citations": "typed"
+    },
+    "latency_band": {
+     "p50_s": 34.5,
+     "p90_s": 54.6,
+     "basis": "measured",
+     "source": "a2a_tasks 30d non-stream Base, n=402"
+    },
+    "pricing": {
+     "unit": "per_answer",
+     "amount": 0.15,
+     "billing": "tier_served",
+     "currency": "usd",
+     "billed_from": "legacy card until the 2026-12 card is switched on"
+    },
+    "free_allowance": {
+     "per_month": 100,
+     "unit": "answers"
+    },
+    "plans": [
+     "sandbox",
+     "payg",
+     "builder",
+     "business",
+     "organization",
+     "enterprise"
+    ],
+    "intended_user": [
+     "clinician",
+     "consumer",
+     "sandbox"
+    ],
+    "snapshots": [],
+    "aliases": [],
+    "deprecation": null
+   },
+   {
+    "id": "asha-base",
+    "object": "model",
+    "created": 1764547200,
+    "owned_by": "dnai-systems",
+    "display_name": "Asha Base",
+    "description": "Default cited answer over the committed corpus, with safety gating.",
+    "status": "ga",
+    "class": "grounded_answer",
+    "context_window": 128000,
+    "max_output_tokens": 4096,
+    "input_modalities": [
+     "text"
+    ],
+    "output_modalities": [
+     "text",
+     "json"
+    ],
+    "capabilities": {
+     "stream": true,
+     "json_schema": true,
+     "citations": "typed"
+    },
+    "latency_band": {
+     "p50_s": 34.5,
+     "p90_s": 54.6,
+     "basis": "measured",
+     "source": "a2a_tasks 30d non-stream, escalation_tier=base, n=402"
+    },
+    "pricing": {
+     "unit": "per_answer",
+     "amount": 0.15,
+     "currency": "usd",
+     "billed_from": "legacy card until the 2026-12 card is switched on"
+    },
+    "free_allowance": {
+     "per_month": 100,
+     "unit": "answers"
+    },
+    "plans": [
+     "sandbox",
+     "payg",
+     "builder",
+     "business",
+     "organization",
+     "enterprise"
+    ],
+    "intended_user": [
+     "clinician",
+     "consumer",
+     "sandbox"
+    ],
+    "snapshots": [
+     "asha-base-2026-12-01"
+    ],
+    "aliases": [],
+    "deprecation": null
+   },
+   {
+    "id": "asha-verify",
+    "object": "model",
+    "created": 1764547200,
+    "owned_by": "dnai-systems",
+    "display_name": "Asha Verify",
+    "description": "Tries to refute one claim against the corpus; returns supported, contradicted, mixed or insufficient_evidence.",
+    "status": "preview",
+    "class": "verification",
+    "context_window": null,
+    "max_output_tokens": null,
+    "input_modalities": [],
+    "output_modalities": [],
+    "capabilities": {
+     "stream": false,
+     "json_schema": false,
+     "citations": "typed"
+    },
+    "latency_band": {
+     "p50_s": 1.5,
+     "p90_s": 3.0,
+     "basis": "target"
+    },
+    "pricing": {
+     "unit": "per_1k_claims",
+     "amount": 5.0,
+     "currency": "usd",
+     "billed_from": "legacy card until the 2026-12 card is switched on"
+    },
+    "free_allowance": {
+     "per_month": 1000,
+     "unit": "claims"
+    },
+    "plans": [
+     "sandbox",
+     "payg",
+     "builder",
+     "business",
+     "organization",
+     "enterprise"
+    ],
+    "intended_user": [
+     "clinician",
+     "consumer",
+     "sandbox"
+    ],
+    "snapshots": [],
+    "aliases": [],
+    "deprecation": null,
+    "endpoint": "POST /v1/verify",
+    "status_note": "POST /v1/verify (slice F1); not a chat model. Preview until the API-path latency is measured against the 1.5 s target."
+   },
+   {
+    "id": "asha-med-check",
+    "object": "model",
+    "created": 1764547200,
+    "owned_by": "dnai-systems",
+    "display_name": "Asha medication check",
+    "description": "Deterministic medication-list screen; no LLM; names every drug it could not check.",
+    "status": "ga",
+    "class": "deterministic_check",
+    "context_window": null,
+    "max_output_tokens": null,
+    "input_modalities": [],
+    "output_modalities": [],
+    "capabilities": {
+     "stream": false,
+     "json_schema": false,
+     "citations": "none"
+    },
+    "latency_band": {
+     "p50_ms": 0.39,
+     "p90_ms": 0.43,
+     "basis": "measured",
+     "source": "local, 8 drugs, n=500; add network overhead"
+    },
+    "pricing": {
+     "unit": "per_call",
+     "amount": 0,
+     "currency": "usd",
+     "billed_from": "legacy card until the 2026-12 card is switched on"
+    },
+    "free_allowance": {},
+    "plans": [
+     "sandbox",
+     "payg",
+     "builder",
+     "business",
+     "organization",
+     "enterprise"
+    ],
+    "intended_user": [
+     "clinician",
+     "sandbox"
+    ],
+    "snapshots": [],
+    "aliases": [],
+    "deprecation": null,
+    "endpoint": "POST /v1/clinical/med-check",
+    "status_note": "POST /v1/clinical/med-check (slice C1); not a chat model. Free on every plan."
+   }
+  ]
+ },
+ "corpus_state": {
+  "hash": "48ba3ec2f0e6a9dc22253202c3d2b425dd3ef154016917b9a7793faffa837aa4ac0d09a02ccc1be745a432c03dcefe7711a0766e014a96c31127847bccaa5b5e",
+  "algorithm": "sha512",
+  "collections": 20,
+  "as_of": "2026-11-26T06:34:34.104015+00:00",
+  "verify_url": "https://api.askasha.org/api/audit/corpus-state/public"
+ }
+}

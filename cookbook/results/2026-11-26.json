@@ -1,0 +1,89 @@
+{
+  "run_at": "2026-11-26T06:55:42+00:00",
+  "base_url": "https://api.askasha.org",
+  "passed": 10,
+  "total": 10,
+  "results": [
+    {
+      "recipe": "01_patient_assistant.py",
+      "status": "pass",
+      "exit": 0,
+      "seconds": 9.5,
+      "last_line": "escalation=emergency emergency=True audience_served=consumer receipt=rcpt_q_4O4JjlKqlmQHfjSPTp7jzb",
+      "stderr_tail": ""
+    },
+    {
+      "recipe": "02_clinician_ap_template.py",
+      "status": "pass",
+      "exit": 0,
+      "seconds": 39.1,
+      "last_line": "requires_clinician_review=True audience_served=consumer missing_data=['No patient-specific context (age, sex, history, medications) was supplied.']",
+      "stderr_tail": ""
+    },
+    {
+      "recipe": "03_clinical_subagent_json.py",
+      "status": "pass",
+      "exit": 0,
+      "seconds": 30.4,
+      "last_line": "7 diagnoses, escalate_now=True, 5 references, receipt=rcpt_y4rQ7Wfk19irR04zoNtPPEuB",
+      "stderr_tail": ""
+    },
+    {
+      "recipe": "04_ehr_summary_for_agent.py",
+      "status": "pass",
+      "exit": 0,
+      "seconds": 21.1,
+      "last_line": "}",
+      "stderr_tail": ""
+    },
+    {
+      "recipe": "05_verify_before_show.py",
+      "status": "pass",
+      "exit": 0,
+      "seconds": 2.4,
+      "last_line": "Caveat shown with every claim: A claim that survives is not refuted, which is weaker than true.",
+      "stderr_tail": ""
+    },
+    {
+      "recipe": "06_med_check_fhir.py",
+      "status": "pass",
+      "exit": 0,
+      "seconds": 0.2,
+      "last_line": "}",
+      "stderr_tail": ""
+    },
+    {
+      "recipe": "07_search_rerank_rag.py",
+      "status": "pass",
+      "exit": 0,
+      "seconds": 2.1,
+      "last_line": "search: 14 passages, 0.002 USD; rerank: 5 kept, 0.0005 USD",
+      "stderr_tail": ""
+    },
+    {
+      "recipe": "08_switch_base_url.py",
+      "status": "pass",
+      "exit": 0,
+      "seconds": 35.0,
+      "last_line": "  citations: ['Uncomplicated Bacterial Community-Acquired Urinary Tract Infection in Adults.', 'Unknown Entity', 'Uncomplicated Bacterial Community-Acquired Urinary Tract Infection in Adults.'] receipt: rcpt_W0iU6v4u3hnZfHq2Fcz6ReVG",
+      "stderr_tail": ""
+    },
+    {
+      "recipe": "09_migrate_from_glass.py",
+      "status": "pass",
+      "exit": 0,
+      "seconds": 15.8,
+      "last_line": "}",
+      "stderr_tail": ""
+    },
+    {
+      "recipe": "10_idempotent_retries_receipts.py",
+      "status": "pass",
+      "exit": 0,
+      "seconds": 19.2,
+      "last_line": "replay returned the stored answer: True",
+      "stderr_tail": ""
+    }
+  ],
+  "note": "Full run at run_at; recipe 05 re-run after a display fix (null evidence title falls back to the snippet)."
+}

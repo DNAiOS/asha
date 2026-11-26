@@ -4,3 +4,8 @@ __pycache__/
 node_modules/
 .env
 .DS_Store
+dist/
+*.tsbuildinfo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

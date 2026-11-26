@@ -1,0 +1,68 @@
+{
+  "name": "askasha",
+  "version": "0.1.0",
+  "description": "TypeScript client for the Asha API, made by DNAi Systems: cited medical answers, claim checks, medication checks, evidence search and rerank.",
+  "license": "Apache-2.0",
+  "author": "DNAi Systems <hello@dnai.systems>",
+  "homepage": "https://askasha.org/developers/docs/sdks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DNAiOS/asha.git",
+    "directory": "sdk/typescript"
+  },
+  "bugs": "https://github.com/DNAiOS/asha/issues",
+  "keywords": [
+    "asha",
+    "medical",
+    "healthcare",
+    "llm",
+    "openai",
+    "anthropic",
+    "citations",
+    "fhir"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "gen:types": "openapi-typescript ${ASHA_OPENAPI_URL:-https://api.askasha.org/openapi.json} -o src/openapi.d.ts && node scripts/strip-jsdoc.mjs src/openapi.d.ts",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.14.0",
+    "openai": "^7.64.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.11",
+    "openapi-typescript": "^7.13.0",
+    "tsup": "^9.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.2"
+  }
+}
